@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import styled from '@emotion/styled'
+
+const Heading = styled.h1`
+  font-family: 'Lato', sans-serif;
+  color: #fff
+`
 
 function App() {
 
   return (
-    <>
-      <div>
-        Hola Mundo
-      </div>
-    </>
+    <Heading>
+      Hola Mundo
+    </Heading>
   )
 }
 
