@@ -26,8 +26,17 @@ const Heading = styled.h1`
   text-align: center;
   font-weight: 700;
   margin-top: 80px; 
-  margin-button: 50px;
+  margin-botton: 50px;
   font-zise : 34px;
+
+  &::after{
+    content: '';
+    width: 100px;
+    height: 6px;
+    background-color: #66a2fe;
+    display: block;
+    margin: 10px auto 0 auto;
+  }
 
   @media(min-width: 992px){
     display: grid;
@@ -44,7 +53,7 @@ function App() {
         src={imagenCripto}
         alt='Image kripto'
       />
-      <Heading>Hola Mundo</Heading>
+      <Heading>Cotiza criptomonedas al instante</Heading>
     </Contenedor>
   )
 }
