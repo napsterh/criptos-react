@@ -28,7 +28,7 @@ const Formulario = () => {
       {id: 'GBP', nombre: 'Libra esterlina'}
    ]
 
-   const [ SelectMonedas ] = useSelectMonedas('Elige tu moneda', monedas)
+   const [ moneda, SelectMonedas ] =  ('Elige tu moneda', monedas)
 
    return (
       <form>
