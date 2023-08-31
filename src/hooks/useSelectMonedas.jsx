@@ -1,11 +1,13 @@
 import styled from '@emotion/styled'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Label = styled.label`
    color: #fff;
 `
 
 const useSelectMonedas = (label, opciones) => {
+
+   const [ state, setState ] = useState('')
    
    const SelectMonedas = () => (
       <>
