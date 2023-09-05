@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import useSelectMonedas from '../hooks/useSelectMonedas'
 
@@ -20,6 +20,7 @@ const InputSubmit = styled.input`
 `
 
 const Formulario = () => {
+   const [ criptos, setCriptos ] = useState([])
 
    const monedas = [
       {id: 'USD', nombre: 'Dolar de Estados Unidos'},
@@ -39,11 +40,14 @@ const Formulario = () => {
          const arrayCriptos = resultado.Data.map( cripto => {
             
             const objeto = {
-               id: cripto.CoinInfo.name
+               id: cripto.CoinInfo.name,
+               nombre: cripto.CoinInfo.FullName
             }
 
-            console.log(objeto)
+            return objeto
          })
+
+         setCriptos(arrayCriptos)
       }
       consultarAPI()
    }, [])
