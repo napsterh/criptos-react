@@ -30,7 +30,7 @@ const Formulario = () => {
    ]
 
    const [ moneda, SelectMonedas ] =  useSelectMonedas('Elige tu moneda', monedas)
-   const [ moneda, SelectMonedas ] =  useSelectMonedas('Elige tu criptomoneda', criptos)
+   const [ criptomoneda, SelectCriptomoneda ] =  useSelectMonedas('Elige tu criptomoneda', criptos)
 
    useEffect(() => {
       const consultarAPI = async () => {
