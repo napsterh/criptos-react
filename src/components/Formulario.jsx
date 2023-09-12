@@ -58,6 +58,7 @@ const Formulario = () => {
       <form>
 
          <SelectMonedas/>
+         <SelectCriptomoneda/>
 
          <InputSubmit
             type='submit'
