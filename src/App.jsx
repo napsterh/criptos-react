@@ -39,11 +39,6 @@ const Heading = styled.h1`
     margin: 10px auto 0 auto;
   }
 
-  @media(min-width: 992px){
-    display: grid;
-    grid-template-columns: (2, 1fr)
-    column-gap: 2rem;
-  } 
 `
 
 function App() {
