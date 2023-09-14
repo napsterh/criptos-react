@@ -52,10 +52,20 @@ const Formulario = () => {
       }
       consultarAPI()
    }, [])
+
+   const handleSubmit = (e) => {
+      e.preventDefault()
+      if([moneda, criptomoneda].includes('')){
+         return
+      } 
+
+   }
    
 
    return (
-      <form>
+      <form
+         onSubmit={handleSubmit}
+      >
 
          <SelectMonedas/>
          <SelectCriptomoneda/>
