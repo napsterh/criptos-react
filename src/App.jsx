@@ -43,6 +43,8 @@ const Heading = styled.h1`
 
 function App() {
 
+  const [ monedas, setMonedas ] = useState({})
+
   return (
     <Contenedor>
       <Imagen
@@ -51,7 +53,9 @@ function App() {
       />
       <div>
         <Heading>Cotiza criptomonedas al instante</Heading>
-        <Formulario/>
+        <Formulario
+          setMonedas={setMonedas}
+        />
       </div>
     </Contenedor>
   )
