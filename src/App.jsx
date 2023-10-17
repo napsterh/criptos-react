@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import imagenCripto from './img/imagen-criptos.png'
 import Formulario from './components/Formulario'
+import Resultado from './components/Resultado'
 
 const Contenedor = styled.div`
   max-width: 900px;
@@ -73,6 +74,8 @@ console.log("hola", resultado)
         <Formulario
           setMonedas={setMonedas}
         />
+
+        { resultado.PRICE && <Resultado resultado={resultado}/> }
       </div>
     </Contenedor>
   )

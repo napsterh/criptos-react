@@ -32,7 +32,7 @@ const Formulario = ({setMonedas}) => {
    ]
 
    const [ moneda, SelectMonedas ] =  useSelectMonedas('Elige tu moneda', monedas)
-   const [ criptomoneda, SelectCriptomoneda ] =  useSelectMonedas('Elige tu criptomoneda', criptos)
+   const [ criptomoneda, SelectCriptomoneda ] =  useSelectMonedas('Elige tu Criptomoneda', criptos)
 
    useEffect(() => {
       const consultarAPI = async () => {
@@ -43,13 +43,12 @@ const Formulario = ({setMonedas}) => {
          const arrayCriptos = resultado.Data.map( cripto => {
             
             const objeto = {
-               id: cripto.CoinInfo.name,
+               id: cripto.CoinInfo.Name,
                nombre: cripto.CoinInfo.FullName
             }
 
             return objeto
          })
-
          setCriptos(arrayCriptos)
       }
       consultarAPI()
