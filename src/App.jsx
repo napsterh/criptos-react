@@ -10,7 +10,7 @@ const Contenedor = styled.div`
   width: 90%;
   @media(min-width: 992px){
     display: grid;
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
   }
 `
@@ -46,17 +46,21 @@ function App() {
 
   const [ monedas, setMonedas ] = useState({})
   const [ resultado, setResultado ] = useState({})
+  const [ cargando, setCargando ] = useState(false)
 
   useEffect(() => {
     if(Object.keys(monedas).length > 0){
       const cotizarCripto = async () => {
+        setCargando(true)
+
         const { moneda, criptomoneda } = monedas
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
 
         const respuesta = await fetch(url)
         const resultado = await respuesta.json()
-console.log("hola", resultado)
         setResultado(resultado.DISPLAY[criptomoneda][moneda])
+
+        setCargando(false)
 
       }
       cotizarCripto()
@@ -75,6 +79,7 @@ console.log("hola", resultado)
           setMonedas={setMonedas}
         />
 
+        { cargando && <p>Cargando...</p> }
         { resultado.PRICE && <Resultado resultado={resultado}/> }
       </div>
     </Contenedor>

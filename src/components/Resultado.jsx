@@ -12,7 +12,7 @@ const Contenedor = styled.div`
 
 const Imagen = styled.img`
    display: block;
-   width: 150px;
+   width: 120px;
 `
 
 const Texto = styled.div`
